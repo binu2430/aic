@@ -1,0 +1,51 @@
+<div class="mobile-menu-btn">
+    <i class="fas fa-bars"></i>
+</div>
+
+<div class="mobile-menu">
+    <div class="mobile-menu-close">
+        <i class="fas fa-times"></i>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1>Advanced International Contracting LLC</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+// Mobile menu functionality
+$(document).ready(function() {
+    $('.mobile-menu-btn').click(function() {
+        $('.mobile-menu').addClass('active');
+    });
+    
+    $('.mobile-menu-close').click(function() {
+        $('.mobile-menu').removeClass('active');
+    });
+    
+    // Set active menu item based on current page
+    var currentPage = location.pathname.split('/').pop();
+    $('nav ul li a, .mobile-menu ul li a').each(function() {
+        if ($(this).attr('href') === currentPage) {
+            $(this).parent().addClass('active');
+        }
+    });
+});
+</script>
